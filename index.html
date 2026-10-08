@@ -1,305 +1,185 @@
-/* ==========================================================================
-   1. CSS CUSTOM PROPERTIES (VARIABLES - COOLORS PALETTE)
-   ========================================================================== */
-:root {
-  --bg-primary: #18020c;      /* Coffee Bean */
-  --bg-card: #28101a;         /* Card Container */
-  --bg-article: #381826;      /* Sub-card Container */
-  --text-primary: #f9ebe0;    /* Linen */
-  --text-muted: #d6c3b5;      /* Soft Muted Linen */
-  --accent-primary: #b27c66;  /* Cinnamon Wood */
-  --accent-secondary: #caa8f5;/* Mauve */
-  --accent-highlight: #6247aa;/* Deep Lilac */
-  --border-color: #4a2132;    /* Subtle Muted Border */
-  --shadow-main: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 14px 30px -6px rgba(202, 168, 245, 0.25); /* NEW: hover glow */
-  --transition: 0.25s ease;   /* NEW: shared animation timing */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Baye Mbodj, Information Science student at Michigan State University and founder of ByBrillMedia, building accessible websites and short-form video for local businesses.">
+  <meta name="author" content="Baye Mbodj">
+  <meta name="keywords" content="Baye Mbodj, Web Development, Short-Form Video, ByBrillMedia, Semantic HTML, Portfolio">
 
-/* ==========================================================================
-   2. GLOBAL & BASE STYLES
-   ========================================================================== */
-* {
-  box-sizing: border-box;
-}
+  <!-- Open Graph / Social Media Metadata -->
+  <meta property="og:title" content="Baye Mbodj | Web Developer & Video Creator">
+  <meta property="og:description" content="Clean, accessible websites and short-form video that gets local businesses noticed.">
+  <meta property="og:type" content="website">
 
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0 20px 40px;
-}
+  <title>Baye Mbodj — Portfolio</title>
 
-/* ==========================================================================
-   3. TYPOGRAPHY & HEADINGS
-   ========================================================================== */
-h1, h2, h3, h4 {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--text-primary);
-  margin-top: 0;
-}
+  <!-- Custom Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 
-h1 {
-  font-size: 2.2rem;
-  line-height: 1.2;
-  color: var(--accent-secondary);
-}
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
 
-h2 {
-  font-size: 1.6rem;
-  border-bottom: 2px solid var(--accent-primary);
-  padding-bottom: 8px;
-  margin-bottom: 20px;
-}
+  <!-- 1. Header & Navigation Section -->
+  <header>
+    <div id="brand-logo">
+      <a href="#top" aria-label="Baye Mbodj Portfolio Home">
+        <strong>&lt;BM/&gt;</strong> <span>Baye Mbodj</span>
+      </a>
+    </div>
 
-h3 {
-  font-size: 1.25rem;
-  color: var(--accent-secondary);
-}
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-p {
-  color: var(--text-muted);
-  font-size: 1rem;
-  margin-bottom: 16px;
-}
+  <main>
 
-strong {
-  color: var(--text-primary);
-}
+    <!-- 2. Hero / Intro Section -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <header>
+        <h1 id="hero-heading">I Build Websites and Make Videos That Get Noticed</h1>
+        <p>Hi, I'm Baye Mbodj. I write clean, accessible code and create short-form video for local businesses.</p>
+      </header>
+      <p>
+        I'm an Information Science student at Michigan State University and the founder of ByBrillMedia, where I plan, film, and edit social content for service businesses in the Lansing area.
+      </p>
+      <p>
+        <a href="#projects">See My Work</a>
+        <a href="#contact">Get In Touch</a>
+      </p>
+    </section>
 
-/* ==========================================================================
-   4. NAVIGATION & HEADER LANDMARK
-   ========================================================================== */
-/* FIXED: "header" alone also styled the hero and project <header>s */
-body > header {
-  background-color: var(--bg-card);
-  border-bottom: 2px solid var(--accent-primary);
-  padding: 20px;
-  margin-bottom: 40px;
-  box-shadow: var(--shadow-main);
-  border-radius: 0 0 12px 12px;
-}
 
-#brand-logo a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.4rem;
-  color: var(--accent-primary);
-  text-decoration: none;
-  font-weight: 800;
-}
+    <!-- 3. About Section -->
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0 0 0;
-}
+      <figure>
+        <img src="https://placehold.co/300x300" alt="Portrait of Baye Mbodj" width="300" height="300">
+        <figcaption>Developer, video editor, and content strategist based in East Lansing.</figcaption>
+      </figure>
 
-nav li {
-  display: inline-block;
-  margin-right: 20px;
-}
+      <article>
+        <h3>How I Work</h3>
+        <p>
+          Code and video have more in common than people think. A web page needs clear structure so anyone can navigate it. A short video needs tight pacing so viewers don't scroll past it. In both, <strong>if the audience gets lost, the work isn't finished</strong>.
+        </p>
+        <p>
+          I focus on fundamentals: semantic markup, accessibility, and fast-loading pages on the web side; strong hooks, clean edits, and clear messaging on the video side.
+        </p>
+      </article>
 
-/* NEW: no trailing gap after the last nav item */
-nav li:last-child {
-  margin-right: 0;
-}
+      <article>
+        <h3>Skills &amp; Tools</h3>
+        <ul>
+          <li><strong>Web:</strong> HTML5, CSS3, JavaScript, Git, GitHub, Netlify</li>
+          <li><strong>Video:</strong> Final Cut Pro, DaVinci Resolve, CapCut, iPhone cinematography with gimbal and wireless audio</li>
+          <li><strong>Practices:</strong> Semantic HTML, accessibility (WCAG), content strategy for short-form social</li>
+        </ul>
+      </article>
+    </section>
 
-nav a {
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: background-color var(--transition); /* NEW */
-}
 
-nav a:hover {
-  color: var(--text-primary);
-  background-color: var(--accent-highlight);
-}
+    <!-- 4. Projects Showcase Section -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <p>Recent web builds and video work.</p>
 
-/* ==========================================================================
-   5. LAYOUT CONTAINERS & SECTIONS
-   ========================================================================== */
-main {
-  max-width: 900px;
-  margin: 0 auto;
-}
+      <!-- Project 1 -->
+      <article aria-labelledby="proj-1-title">
+        <header>
+          <h3 id="proj-1-title">Hello World: Web Lifecycle Lab</h3>
+          <p><small>Web Development · HTML5, Git, GitHub, Netlify</small></p>
+        </header>
 
-section {
-  background-color: var(--bg-card);
-  padding: 30px;
-  margin-bottom: 35px;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-main);
-}
+        <figure>
+          <img src="https://placehold.co/600x350" alt="Hello World page live on Netlify" width="600" height="350">
+          <figcaption>First deploy: from local repository to a live HTTPS site.</figcaption>
+        </figure>
 
-/* NEW: make the hero stand out from the other sections */
-#hero {
-  border-top: 4px solid var(--accent-secondary);
-  padding: 50px 30px;
-}
+        <p>
+          <strong>Overview:</strong> A starter project that took a single web page through the full workflow, from creating a local Git repository to publishing it live on Netlify.
+        </p>
 
-#hero header p {
-  font-size: 1.2rem;
-  color: var(--text-primary);
-}
+        <h4>What I Did</h4>
+        <ul>
+          <li>Tracked changes with Git and pushed the source code to GitHub.</li>
+          <li>Connected the repository to Netlify so every push deploys the site automatically over HTTPS.</li>
+        </ul>
 
-/* NEW: hero links become pill buttons */
-#hero a {
-  display: inline-block;
-  background-color: var(--accent-highlight);
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  margin: 4px;
-  border-radius: 999px;
-  transition: transform var(--transition), background-color var(--transition);
-}
+        <p>
+          <!-- TODO: replace with your actual repository URL -->
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">View the Repository on GitHub (opens in new tab)</a>
+        </p>
+      </article>
 
-#hero a:hover {
-  background-color: var(--accent-secondary);
-  color: var(--bg-primary);
-  transform: translateY(-2px);
-}
+      <!-- Project 2 -->
+      <article aria-labelledby="proj-2-title">
+        <header>
+          <h3 id="proj-2-title">ByBrillMedia: Short-Form Video for Local Businesses</h3>
+          <p><small>Video Production &amp; Content Strategy · Final Cut Pro, CapCut, DaVinci Resolve</small></p>
+        </header>
 
-/* ==========================================================================
-   6. ARTICLES, CARDS & IMAGES
-   ========================================================================== */
-article {
-  background-color: var(--bg-article);
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-  border-left: 4px solid var(--accent-highlight);
-  transition: transform var(--transition), box-shadow var(--transition); /* NEW */
-}
+        <figure>
+          <img src="https://placehold.co/600x350" alt="Final Cut Pro timeline for a short-form social video" width="600" height="350">
+          <figcaption>Editing a vertical video with layered titles and color grading.</figcaption>
+        </figure>
 
-/* NEW: project cards lift on hover */
-#projects article:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-glow);
-}
+        <p>
+          <strong>Overview:</strong> Reels, TikToks, and YouTube Shorts for local service businesses, including real estate, retail, and personal brands. I handle strategy, filming, and editing.
+        </p>
 
-/* NEW: links on article backgrounds use mauve for stronger contrast */
-article a {
-  color: var(--accent-secondary);
-}
+        <h4>What I Did</h4>
+        <ul>
+          <li>Built hooks, captions, and pacing designed to keep viewers watching past the first few seconds.</li>
+          <li>Used layered effects like pop-out subjects and cutout titles to make videos stand out in the feed.</li>
+          <li>Exported for each platform's specs so videos stay sharp on phones.</li>
+        </ul>
 
-/* NEW: category line becomes a pill tag */
-#projects header small {
-  display: inline-block;
-  background-color: var(--bg-primary);
-  color: var(--accent-secondary);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 999px;
-}
+        <p>
+          <!-- TODO: replace with a link to your reel or Instagram -->
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Watch Sample Videos (opens in new tab)</a>
+        </p>
+      </article>
+    </section>
 
-figure {
-  margin: 20px 0;
-  text-align: center;
-}
 
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  border: 2px solid var(--accent-primary);
-  box-shadow: var(--shadow-main);
-}
+    <!-- 5. Contact Section -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get In Touch</h2>
+      <p>Have a web project or need video content for your business? Send me a message.</p>
 
-/* NEW: tilted headshot (orientation change), straightens on hover */
-#about img {
-  transform: rotate(-3deg);
-  transition: transform var(--transition);
-}
+      <address>
+        <p><strong>Location:</strong> East Lansing, Michigan</p>
+        <p><strong>Email:</strong> <a href="mailto:contact@bybrillmedia.com">contact@bybrillmedia.com</a></p>
+      </address>
 
-#about img:hover {
-  transform: rotate(0deg) scale(1.03);
-}
+      <h3>Find Me Online</h3>
+      <ul>
+        <!-- TODO: replace with your actual profile URLs -->
+        <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub (opens in new tab)</a></li>
+        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn (opens in new tab)</a></li>
+        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram (opens in new tab)</a></li>
+      </ul>
+    </section>
 
-figcaption {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-top: 8px;
-  font-style: italic;
-}
+  </main>
 
-/* ==========================================================================
-   7. LISTS, LINKS & ADDRESS
-   ========================================================================== */
-ul {
-  padding-left: 20px;
-}
+  <!-- Footer Landmark -->
+  <footer>
+    <p>&copy; 2026 Baye Mbodj. Built with semantic HTML5 and CSS.</p>
+    <p><a href="#top">Back to top ↑</a></p>
+  </footer>
 
-li {
-  margin-bottom: 8px;
-  color: var(--text-muted);
-}
-
-/* NEW: purple bullets */
-li::marker {
-  color: var(--accent-secondary);
-}
-
-a {
-  color: var(--accent-primary);
-  text-decoration: underline;
-  text-underline-offset: 3px; /* NEW */
-}
-
-a:hover {
-  color: var(--accent-secondary);
-}
-
-/* NEW: visible keyboard focus everywhere */
-a:focus-visible {
-  outline: 3px solid var(--accent-secondary);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-address {
-  font-style: normal;
-  background-color: var(--bg-article);
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 3px solid var(--accent-primary);
-  margin-bottom: 20px;
-}
-
-/* ==========================================================================
-   8. FOOTER LANDMARK
-   ========================================================================== */
-footer {
-  text-align: center;
-  padding: 25px;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border-color);
-  margin-top: 40px;
-}
-
-footer a {
-  color: var(--accent-primary);
-}
-
-/* ==========================================================================
-   9. ACCESSIBILITY: REDUCED MOTION (NEW)
-   ========================================================================== */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
-
-  #about img,
-  #about img:hover,
-  #projects article:hover {
-    transform: none;
-  }
-}
+</body>
+</html>
