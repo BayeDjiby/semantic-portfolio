@@ -12,6 +12,8 @@
   --accent-highlight: #6247aa;/* Deep Lilac */
   --border-color: #4a2132;    /* Subtle Muted Border */
   --shadow-main: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 14px 30px -6px rgba(202, 168, 245, 0.25); /* NEW: hover glow */
+  --transition: 0.25s ease;   /* NEW: shared animation timing */
 }
 
 /* ==========================================================================
@@ -70,7 +72,8 @@ strong {
 /* ==========================================================================
    4. NAVIGATION & HEADER LANDMARK
    ========================================================================== */
-header {
+/* FIXED: "header" alone also styled the hero and project <header>s */
+body > header {
   background-color: var(--bg-card);
   border-bottom: 2px solid var(--accent-primary);
   padding: 20px;
@@ -98,12 +101,18 @@ nav li {
   margin-right: 20px;
 }
 
+/* NEW: no trailing gap after the last nav item */
+nav li:last-child {
+  margin-right: 0;
+}
+
 nav a {
   color: var(--text-primary);
   text-decoration: none;
   font-weight: 500;
   padding: 6px 12px;
   border-radius: 6px;
+  transition: background-color var(--transition); /* NEW */
 }
 
 nav a:hover {
@@ -128,6 +137,36 @@ section {
   box-shadow: var(--shadow-main);
 }
 
+/* NEW: make the hero stand out from the other sections */
+#hero {
+  border-top: 4px solid var(--accent-secondary);
+  padding: 50px 30px;
+}
+
+#hero header p {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+/* NEW: hero links become pill buttons */
+#hero a {
+  display: inline-block;
+  background-color: var(--accent-highlight);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin: 4px;
+  border-radius: 999px;
+  transition: transform var(--transition), background-color var(--transition);
+}
+
+#hero a:hover {
+  background-color: var(--accent-secondary);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+}
+
 /* ==========================================================================
    6. ARTICLES, CARDS & IMAGES
    ========================================================================== */
@@ -137,6 +176,29 @@ article {
   margin-top: 20px;
   border-radius: 8px;
   border-left: 4px solid var(--accent-highlight);
+  transition: transform var(--transition), box-shadow var(--transition); /* NEW */
+}
+
+/* NEW: project cards lift on hover */
+#projects article:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* NEW: links on article backgrounds use mauve for stronger contrast */
+article a {
+  color: var(--accent-secondary);
+}
+
+/* NEW: category line becomes a pill tag */
+#projects header small {
+  display: inline-block;
+  background-color: var(--bg-primary);
+  color: var(--accent-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
 }
 
 figure {
@@ -150,6 +212,16 @@ img {
   border-radius: 8px;
   border: 2px solid var(--accent-primary);
   box-shadow: var(--shadow-main);
+}
+
+/* NEW: tilted headshot (orientation change), straightens on hover */
+#about img {
+  transform: rotate(-3deg);
+  transition: transform var(--transition);
+}
+
+#about img:hover {
+  transform: rotate(0deg) scale(1.03);
 }
 
 figcaption {
@@ -171,13 +243,26 @@ li {
   color: var(--text-muted);
 }
 
+/* NEW: purple bullets */
+li::marker {
+  color: var(--accent-secondary);
+}
+
 a {
   color: var(--accent-primary);
   text-decoration: underline;
+  text-underline-offset: 3px; /* NEW */
 }
 
 a:hover {
   color: var(--accent-secondary);
+}
+
+/* NEW: visible keyboard focus everywhere */
+a:focus-visible {
+  outline: 3px solid var(--accent-secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 address {
@@ -202,4 +287,19 @@ footer {
 
 footer a {
   color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   9. ACCESSIBILITY: REDUCED MOTION (NEW)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+
+  #about img,
+  #about img:hover,
+  #projects article:hover {
+    transform: none;
+  }
 }
