@@ -1,0 +1,205 @@
+/* ==========================================================================
+   1. CSS CUSTOM PROPERTIES (VARIABLES - COOLORS PALETTE)
+   ========================================================================== */
+:root {
+  --bg-primary: #18020c;      /* Coffee Bean */
+  --bg-card: #28101a;         /* Card Container */
+  --bg-article: #381826;      /* Sub-card Container */
+  --text-primary: #f9ebe0;    /* Linen */
+  --text-muted: #d6c3b5;      /* Soft Muted Linen */
+  --accent-primary: #b27c66;  /* Cinnamon Wood */
+  --accent-secondary: #caa8f5;/* Mauve */
+  --accent-highlight: #6247aa;/* Deep Lilac */
+  --border-color: #4a2132;    /* Subtle Muted Border */
+  --shadow-main: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   2. GLOBAL & BASE STYLES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 20px 40px;
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY & HEADINGS
+   ========================================================================== */
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-primary);
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  color: var(--accent-secondary);
+}
+
+h2 {
+  font-size: 1.6rem;
+  border-bottom: 2px solid var(--accent-primary);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: var(--accent-secondary);
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+strong {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   4. NAVIGATION & HEADER LANDMARK
+   ========================================================================== */
+header {
+  background-color: var(--bg-card);
+  border-bottom: 2px solid var(--accent-primary);
+  padding: 20px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-main);
+  border-radius: 0 0 12px 12px;
+}
+
+#brand-logo a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  color: var(--text-primary);
+  background-color: var(--accent-highlight);
+}
+
+/* ==========================================================================
+   5. LAYOUT CONTAINERS & SECTIONS
+   ========================================================================== */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: var(--bg-card);
+  padding: 30px;
+  margin-bottom: 35px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-main);
+}
+
+/* ==========================================================================
+   6. ARTICLES, CARDS & IMAGES
+   ========================================================================== */
+article {
+  background-color: var(--bg-article);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-highlight);
+}
+
+figure {
+  margin: 20px 0;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid var(--accent-primary);
+  box-shadow: var(--shadow-main);
+}
+
+figcaption {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   7. LISTS, LINKS & ADDRESS
+   ========================================================================== */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--accent-secondary);
+}
+
+address {
+  font-style: normal;
+  background-color: var(--bg-article);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-primary);
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   8. FOOTER LANDMARK
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: 25px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
+
+footer a {
+  color: var(--accent-primary);
+}
