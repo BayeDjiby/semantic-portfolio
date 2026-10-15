@@ -346,10 +346,48 @@ nav li {
 }
 
 /* ==========================================================================
-   12. MOBILE-FIRST RESPONSIVE BREAKPOINTS (3 BREAKPOINTS)
+   12. MOBILE-FIRST RESPONSIVE BREAKPOINTS
    ========================================================================== */
 
 /* BREAKPOINT 1: Mobile Large / Small Tablet (min-width: 480px) */
+@media (min-width: 480px) {
+  body {
+    padding: 0 30px 40px;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  nav ul {
+    justify-content: flex-end;
+  }
+}
+
+/* BREAKPOINT 2: Tablet / Small Desktop (min-width: 768px) */
+@media (min-width: 768px) {
+  #projects {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  #projects > h2, 
+  #projects > p {
+    grid-column: 1 / -1;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* BREAKPOINT 3: Large Desktop (min-width: 1024px) */
 @media (min-width: 1024px) {
   main {
     max-width: 1200px;
@@ -360,12 +398,10 @@ nav li {
     gap: 35px;
   }
 
-  /* Force all main sections to stretch across the entire width */
   section {
     width: 100%;
   }
 
-  /* Two-column layout INSIDE hero text/content */
   #hero {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -373,8 +409,6 @@ nav li {
     gap: 30px;
   }
 }
-
-/* BREAKPOINT 3: Large Desktop (min-width: 1024px) */
 @media (min-width: 1024px) {
   main {
     max-width: 1100px;
