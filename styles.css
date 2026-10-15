@@ -124,7 +124,8 @@ nav a:hover {
    5. LAYOUT CONTAINERS & SECTIONS
    ========================================================================== */
 main {
-  max-width: 900px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -140,7 +141,7 @@ section {
 /* NEW: make the hero stand out from the other sections */
 #hero {
   border-top: 4px solid var(--accent-secondary);
-  padding: 50px 30px;
+  padding: 50px 30px; 
 }
 
 #hero header p {
