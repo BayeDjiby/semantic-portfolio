@@ -405,4 +405,19 @@ nav li {
   #contact {
     grid-column: 2 / 3;
   }
+}/* Fix font scaling and section overflow */
+#hero {
+  overflow: hidden;
+  padding: 30px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.25;
+  color: var(--accent-secondary);
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 0;
+  word-wrap: break-word;
 }
