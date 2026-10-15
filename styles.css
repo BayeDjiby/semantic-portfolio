@@ -8,7 +8,8 @@
   --text-primary: #f9ebe0;    /* Linen */
   --text-muted: #d6c3b5;      /* Soft Muted Linen */
   --accent-primary: #b27c66;  /* Cinnamon Wood */
-  --accent-secondary: #caa8f5;/* Mauve */
+  --accent-secondary: #caa8f
+  5;/* Mauve */
   --accent-highlight: #6247aa;/* Deep Lilac */
   --border-color: #4a2132;    /* Subtle Muted Border */
   --shadow-main: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
@@ -349,40 +350,27 @@ nav li {
    ========================================================================== */
 
 /* BREAKPOINT 1: Mobile Large / Small Tablet (min-width: 480px) */
-@media (min-width: 480px) {
-  body {
-    padding: 0 30px 40px;
+@media (min-width: 1024px) {
+  main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
   }
 
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+  /* Force all main sections to stretch across the entire width */
+  section {
+    width: 100%;
   }
 
-  nav ul {
-    justify-content: flex-end;
-  }
-}
-
-/* BREAKPOINT 2: Tablet / Small Desktop (min-width: 768px) */
-@media (min-width: 768px) {
-  #projects {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  #projects > h2, 
-  #projects > p {
-    grid-column: 1 / -1;
-  }
-
-  h1 {
-    font-size: 2.8rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
+  /* Two-column layout INSIDE hero text/content */
+  #hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 30px;
   }
 }
 
