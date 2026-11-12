@@ -409,3 +409,18 @@ nav li {
     gap: 30px;
   }
 }
+/* Dark Mode Inverse Palette */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #f0f0f0 !important;
+}
+
+body.dark-mode a {
+  color: #bb86fc !important;
+}
+
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode section {
+  background-color: inherit;
+}
